@@ -24,7 +24,13 @@
 | Kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng muốn ngừng thuốc giữa chừng|"Nhắn ""uống kháng sinh mới 2 ngày thấy hết đau họng rồi, tôi ngưng luôn được chưa?"""|"Giải thích ngắn gọn nguy cơ kháng thuốc/tái phát để thuyết phục uống đủ liệu trình, hoặc hỏi thêm nếu khách muốn ngưng do gặp tác dụng phụ khó chịu"|Giảm tình trạng tự ý bỏ dở phác đồ điều trị và nâng cao hiệu quả dùng thuốc của khách
 | Kênh chat Hỏi dược sĩ của Pharmacity|Dược sĩ ca cao điểm (giờ trưa / tan tầm)|Tiếp nhận cùng lúc 15–20 khách đang chờ tư vấn trong hàng đợi|"Tự động phân loại và xếp hạng ưu tiên: đẩy ca cấp tính/trẻ nhỏ/dị ứng thuốc lên đầu hàng chờ, tự xử lý trọn vẹn các câu hỏi thông tin sản phẩm/cách dùng đơn giản"|"Dược sĩ tập trung 100% sức lực vào các ca lâm sàng phức tạp, không để ca nguy hiểm bị chìm dưới các câu hỏi hành chính"
 | Kênh chat Hỏi dược sĩ của Pharmacity | Người nhà bệnh nhân lớn tuổi | "Mẹ tôi bị đau ngực và hơi khó thở từ sáng. Có thuốc gì uống đỡ không?" | Nhận diện ngay đây là dấu hiệu cấp cứu tim mạch/hô hấp ("cờ đỏ"), tuyệt đối không gợi ý thuốc, ngắt luồng hỏi đáp thông thường và cảnh báo đưa đi bệnh viện/gọi 115 ngay lập tức (đồng thời bắn cảnh báo đỏ cho dược sĩ giám sát)| 
-- 3 việc tính năng KHÔNG làm, mỗi việc một câu vì sao. | Bệnh nhân không bị trì hoãn "thời gian vàng" cấp cứu vì tự ý mua thuốc giảm đau/dạ dày uống cầm chừng tại nhà
+- 3 việc tính năng KHÔNG làm, mỗi việc một câu vì sao. | Bệnh nhân không bị trì hoãn "thời gian vàng" cấp cứu vì tự ý mua thuốc giảm đau/dạ dày uống cầm chừng tại nhà |
+1. Không tự chẩn đoán bệnh hoặc kết luận tình trạng sức khỏe của khách hàng.
+Vì AI chỉ có thông tin qua tin nhắn, không thể khám trực tiếp hoặc xác minh đầy đủ tình trạng bệnh; kết luận sai có thể khiến khách hàng điều trị muộn.
+2. Không tự kê đơn, bán thuốc kê đơn hoặc tự ý đề xuất thuốc thay thế thuốc kê đơn.
+Vì những quyết định này cần chuyên môn và thẩm quyền của người có chuyên môn y tế, sai sót có thể gây hậu quả nghiêm trọng.
+3. Không tự gợi ý sản phẩm khi thiếu thông tin an toàn quan trọng hoặc có dấu hiệu cấp cứu.
+Vì AI có thể đề xuất thuốc không phù hợp với người sử dụng (đặc biệt là trẻ em, phụ nữ mang thai, người cao tuổi) hoặc làm chậm việc cấp cứu nếu xử lý như một yêu cầu mua thuốc thông thường.
 
 ## §2. Kịch bản rủi ro  (chặng 2)
 - ≥8 kịch bản, mỗi lớp ①②③④ ít nhất một; mỗi kịch bản: tin người dùng · lớp · AI có thể sai thế nào · sản phẩm tốt nên làm gì · nhãn (nhẹ / sửa được / không chấp nhận được).
