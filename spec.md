@@ -1,0 +1,61 @@
+# Bài nộp LAB5 — [Track] · Nhóm [tên]
+**Lớp:** L3A · **Bàn / zone:** ____ · **Track:** T1
+
+| Họ và Tên | Mã Học Viên | Việc đã làm |
+|---|---|---|
+| Nguyễn Sơn Tùng  | 2A202603658  | All |
+|  |  |  |
+|  |  |  |
+
+## §1. Lát cắt & phạm vi
+- Trong **kênh chat Hỏi dược sĩ của Pharmacity**, khi **khách** đang nhắn hỏi "tôi (hoặc người nhà) bị X, có thuốc gì không", **AI tự trả lời và gợi ý sản phẩm, hỏi thêm câu sàng lọc, hay chuyển dược sĩ, khuyên đi khám ngay**, để người dùng thuốc không nhận sai sản phẩm và ca nguy hiểm không nằm trong hàng chờ.
+
+| Sản phẩm | Một người dùng | Một việc | Một quyết định của AI | Một kết quả |
+|---|---|---|---|---|
+| Kênh chat Hỏi dược sĩ của Pharmacity | khách | nhắn hỏi "tôi (hoặc người nhà) bị X, có thuốc gì không" | tự trả lời và gợi ý sản phẩm, hỏi thêm câu sàng lọc, hay chuyển dược sĩ, khuyên đi khám ngay | người dùng thuốc không nhận sai sản phẩm và ca nguy hiểm không nằm trong hàng chờ |
+| kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng|"Nhắn hỏi ""tôi (hoặc người nhà) bị X, có thuốc gì không"""|"Tự trả lời và gợi ý sản phẩm, hỏi thêm câu sàng lọc, hay chuyển dược sĩ, khuyên đi khám ngay"|Người dùng thuốc không nhận sai sản phẩm và ca nguy hiểm không nằm trong hàng chờ
+| kênh chat Hỏi dược sĩ của Pharmacity|Phụ huynh nhắn lúc gần nửa đêm|"Nhắn gấp: ""Con mình sốt, mình chỉ cần ai đó nói ngay là được hay không được, đừng bắt mình chờ"""|"Đánh giá nhanh dấu hiệu nguy hiểm + độ tuổi/cân nặng để chốt ngay phương án hạ sốt an toàn tại nhà, hoặc cảnh báo đưa đi cấp cứu tức thì"|Phụ huynh có câu trả lời dứt khoát trong vài giây mà không phải mòn mỏi chờ dược sĩ trực đêm
+| kênh chat Hỏi dược sĩ của Pharmacity|Dược sĩ trực online|"Xử lý hàng loạt tin nhắn ""có thuốc gì không"" nhưng khách luôn quên nói người uống là ai"|"Tự động chặn trước để hỏi tuổi, đối tượng đặc biệt (bầu, cho con bú, bệnh nền) và triệu chứng chính trước khi đẩy hội thoại sang cho dược sĩ"|"Dược sĩ nhận ca đã đủ thông tin đầu vào, giảm 70% thời gian hỏi đi hỏi lại những câu cơ bản"
+| kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng đang mua nhiều loại thuốc|"Gửi ảnh chụp 3–4 hộp thuốc đang uống cùng lúc và hỏi ""uống chung đống này có sao không?"""|"Nhận diện hoạt chất từ ảnh/tên thuốc, tự động cảnh báo trùng hoạt chất (như 2 loại cùng chứa Paracetamol) hoặc chuyển dược sĩ nếu có tương tác phức tạp"|Khách tránh được nguy cơ quá liều hoặc tương tác thuốc có hại ngay trước khi uống
+| kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng muốn tiết kiệm / tìm thuốc thay thế|"Nhắn tên thuốc kê đơn hoặc thuốc ngoại nhập đắt tiền và hỏi ""có loại nào rẻ hơn mà y chang không?"""|Phân biệt thuốc kê đơn (ETC) hay không kê đơn (OTC); gợi ý thuốc OTC cùng hoạt chất/hàm lượng hoặc chuyển dược sĩ tư vấn nếu là thuốc kê đơn|"Khách tìm được lựa chọn phù hợp túi tiền mà vẫn đúng hoạt chất, không tự ý đổi sai thuốc đặc trị"
+| kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng vừa mua thuốc xong|"Nhắn lại sau 1 tiếng: ""Uống xong thấy hơi buồn nôn / nổi mẩn nhẹ, có nên uống tiếp cữ tối không?"""|"Phân loại mức độ phản ứng: trấn an nếu là tác dụng phụ nhẹ thường gặp (như uống lúc đói), hoặc ngắt liều và đẩy ưu tiên cho dược sĩ/bác sĩ nếu có dấu hiệu dị ứng"|Xử lý kịp thời phản ứng có hại của thuốc (ADR) và giữ an toàn cho khách sau khi rời quầy
+| kênh chat Hỏi dược sĩ của Pharmacity|"Người mua hộ (chồng mua cho vợ bầu, con mua cho bố mẹ già)"|"Nhắn kiểu truyền đạt lại: ""Vợ em đang bầu 5 tháng bị ho, mua siro nào được?"" nhưng không rõ ho khan hay có đờm, có sốt không"|"Chuyển sang chế độ sàng lọc chặt cho nhóm đối tượng nhạy cảm (thai kỳ/người cao tuổi), loại bỏ toàn bộ thuốc chống chỉ định và chỉ gợi ý giải pháp an toàn tuyệt đối"|Người mua hộ không vô tình mang về loại thuốc gây hại cho thai nhi hoặc người bệnh nền
+| kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng đang đứng tại quầy hoặc chuẩn bị đặt giao nhanh|"Nhắn ""tôi đang đau răng lắm, chi nhánh gần nhà còn thuốc giảm đau X không, giao liền giúp tôi"""|"Kiểm tra tồn kho chi nhánh gần nhất, xác nhận thuốc có bán không cần đơn hay không, hoặc đề xuất thuốc giảm đau OTC thay thế đang có sẵn hàng"|Khách nhận được thuốc giảm đau đúng lúc đang cần gấp mà không mất công đi lại nhiều chi nhánh
+| kênh chat Hỏi dược sĩ của Pharmacity|Khách hàng muốn ngừng thuốc giữa chừng|"Nhắn ""uống kháng sinh mới 2 ngày thấy hết đau họng rồi, tôi ngưng luôn được chưa?"""|"Giải thích ngắn gọn nguy cơ kháng thuốc/tái phát để thuyết phục uống đủ liệu trình, hoặc hỏi thêm nếu khách muốn ngưng do gặp tác dụng phụ khó chịu"|Giảm tình trạng tự ý bỏ dở phác đồ điều trị và nâng cao hiệu quả dùng thuốc của khách
+| kênh chat Hỏi dược sĩ của Pharmacity|Dược sĩ ca cao điểm (giờ trưa / tan tầm)|Tiếp nhận cùng lúc 15–20 khách đang chờ tư vấn trong hàng đợi|"Tự động phân loại và xếp hạng ưu tiên: đẩy ca cấp tính/trẻ nhỏ/dị ứng thuốc lên đầu hàng chờ, tự xử lý trọn vẹn các câu hỏi thông tin sản phẩm/cách dùng đơn giản"|"Dược sĩ tập trung 100% sức lực vào các ca lâm sàng phức tạp, không để ca nguy hiểm bị chìm dưới các câu hỏi hành chính"
+- 3 việc tính năng KHÔNG làm, mỗi việc một câu vì sao.
+
+## §2. Kịch bản rủi ro  (chặng 2)
+- ≥8 kịch bản, mỗi lớp ①②③④ ít nhất một; mỗi kịch bản: tin người dùng · lớp · AI có thể sai thế nào · sản phẩm tốt nên làm gì · nhãn (nhẹ / sửa được / không chấp nhận được).
+- Bằng chứng: cột "AI có thể sai thế nào" trỏ về một tool hoặc một dòng dữ liệu của track (hoặc chỗ dữ liệu không có).
+- Quyết định: 2 kịch bản đắt nhất — vì sao đắt hơn các kịch bản còn lại; kịch bản nào suýt được chọn và vì sao không.
+
+## §3. Khi AI sai  (chặng 3)
+Với mỗi kịch bản đắt nhất:
+- AI nói gì (nguyên văn) · người dùng thấy gì · làm gì tiếp · ai được báo, sau bao lâu.
+- Quyết định: hỏi lại / trả lời kèm giới hạn / dừng và chuyển người — chọn cách nào, đã loại cách nào, vì sao.
+- Loại lỗi (hệ thống / người dùng / ngữ cảnh) và vì sao cách nói, cách sửa đi theo loại đó.
+- 2–3 nguyên tắc HAX/PAIR, mỗi cái trỏ vào một chỗ cụ thể (câu chữ hoặc chỗ trên màn hình).
+- Lỗi nào sửa câu chữ không cứu được (nếu có), và thiết kế cứu nó thế nào.
+
+## §4. Mức tự chủ  (chặng 4)
+Với mỗi tool:
+- Mức của nhóm (tự làm / cần người duyệt / cấm). Nếu cần người duyệt: ai duyệt · người duyệt thấy gì · quá hạn thì sao.
+- Lý do theo cost-of-error: sai thì ai chịu gì · đảo lại được không · chờ người thì mất gì.
+- Phương án đã cân nhắc và vì sao loại.
+Thêm:
+- Tool khó xếp nhất: mỗi người từng chọn gì, cái giá của mỗi phía (trỏ về kịch bản ở §2), nhóm chốt thế nào.
+- Thử mức đã đặt trên 2 kịch bản đắt nhất + 1 kịch bản bình thường: cái sai có bị chặn không? còn việc nào làm khi lẽ ra phải hỏi? người dùng bình thường có phải chờ vô ích không?
+- Luật thêm hoặc tool tách bước (nếu có), và vì sao.
+- Một mức tự chủ đã đổi lời hứa nào với người dùng.
+
+## §5. Prototype  (chặng 5)
+- Link hoặc file · công cụ · phần nào mock · có lời gọi AI thật không.
+- 1–2 ảnh có đánh số; mỗi số: thể hiện gì · nguyên tắc HAX/PAIR nào · mức tự chủ nào.
+- Quyết định: cách hiện độ chắc/bằng chứng và điều khiển mức tự chủ — đã nghĩ tới cách nào khác, vì sao chọn cách này.
+
+## §6. Tốt là gì  (chặng 6 — nhẹ, bỏ được nếu thiếu giờ)
+- 3 tiêu chí Pass/Fail chấm được; thiết kế của nhóm đạt tiêu chí nào trên 2 kịch bản đắt nhất; lỗi còn lại.
+
+## §7. Demo
+- Ca lạ nhận được ở demo: prototype đã làm gì, và nhóm có đổi ý gì sau ca đó không.
