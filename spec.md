@@ -96,7 +96,9 @@ Làm gì tiếp?
 **2. Quyết định thiết kế**
 
 `Chọn: Dừng và chuyển hướng xử lý khẩn cấp`
+
 | Phương án |	Quyết định | Lý do |
+| --- | --- | --- |
 | Hỏi lại |	Loại bỏ | Hỏi thêm nhiều câu có thể làm chậm việc tìm trợ giúp y tế. |
 | Trả lời kèm giới hạn | Loại bỏ |	Một câu trả lời có giới hạn vẫn có thể khiến khách nghĩ rằng tự mua thuốc là phù hợp. |
 | Dừng và chuyển người | Chọn, kèm hướng dẫn cấp cứu ngay | Đây là tình huống có nguy cơ cao; khách cần được hướng dẫn hành động ngay thay vì chờ tư vấn.|
