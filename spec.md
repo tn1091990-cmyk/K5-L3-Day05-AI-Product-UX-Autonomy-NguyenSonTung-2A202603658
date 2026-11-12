@@ -85,8 +85,10 @@ Làm gì tiếp?
 - Không đưa khách vào hàng chờ chuyen_duoc_si như bước xử lý chính.
 - Hiển thị lại cảnh báo nếu khách tiếp tục hỏi mua thuốc.
 
-Ai được báo, sau bao lâu?
+**Ai được báo, sau bao lâu?**
+
 | Người nhận | Thời điểm |	Nội dung |
+| ... | ... | ... |
 | Khách hàng |	Ngay lập tức |	Cảnh báo dấu hiệu nguy hiểm và hướng dẫn gọi 115 |
 | Dược sĩ trực | Ngay khi phát hiện tình huống | Thông báo ca có dấu hiệu cấp cứu để nắm được tình hình |
 | Hệ thống giám sát hội thoại |	Ngay khi kích hoạt cảnh báo |	Ghi nhận sự kiện để kiểm tra AI có xử lý đúng không |
