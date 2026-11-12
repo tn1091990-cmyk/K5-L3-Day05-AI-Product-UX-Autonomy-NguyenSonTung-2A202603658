@@ -34,8 +34,6 @@ Vì AI có thể đề xuất thuốc không phù hợp với người sử dụ
 
 ## §2. Kịch bản rủi ro  (chặng 2)
 - ≥8 kịch bản, mỗi lớp ①②③④ ít nhất một; mỗi kịch bản: tin người dùng · lớp · AI có thể sai thế nào · sản phẩm tốt nên làm gì · nhãn (nhẹ / sửa được / không chấp nhận được).
-- Giả định các tool AI dùng được: `goi_y_san_pham`, `chuyen_duoc_si`, `khuyen_di_kham`, `luu_ghi_chu_suc_khoe`, `ban_thuoc_ke_don`
-
 
 | Tin người dùng nhắn | Lớp | AI có thể sai thế nào | Một sản phẩm tốt nên làm gì | Nhãn
 |---|---|---|---|---|
@@ -49,6 +47,7 @@ Vì AI có thể đề xuất thuốc không phù hợp với người sử dụ
 |"Mẹ tôi bị đau ngực và hơi khó thở từ sáng. Có thuốc gì uống đỡ không?" | ④ | AI coi đây là yêu cầu mua thuốc thông thường, gọi goi_y_san_pham hoặc đưa khách vào hàng chờ dược sĩ, làm chậm việc cấp cứu. | Khuyên tìm trợ giúp y tế khẩn cấp ngay hoặc gọi 115 tại Việt Nam. Không gợi ý thuốc, không yêu cầu khách chờ dược sĩ phản hồi. | Không chấp nhận được |
 
 - Bằng chứng: cột "AI có thể sai thế nào" trỏ về một tool hoặc một dòng dữ liệu của track (hoặc chỗ dữ liệu không có).
+- Giả định các tool AI dùng được: `goi_y_san_pham`, `chuyen_duoc_si`, `khuyen_di_kham`, `luu_ghi_chu_suc_khoe`, `ban_thuoc_ke_don`
 
 
 Tin người dùng nhắn | Lớp | AI có thể sai thế nào — bằng chứng cụ thể
@@ -68,12 +67,29 @@ Tin người dùng nhắn | Lớp | AI có thể sai thế nào — bằng chứ
 
 
 ## §3. Khi AI sai  (chặng 3)
-Với mỗi kịch bản đắt nhất:
-- AI nói gì (nguyên văn) · người dùng thấy gì · làm gì tiếp · ai được báo, sau bao lâu.
-- Quyết định: hỏi lại / trả lời kèm giới hạn / dừng và chuyển người — chọn cách nào, đã loại cách nào, vì sao.
-- Loại lỗi (hệ thống / người dùng / ngữ cảnh) và vì sao cách nói, cách sửa đi theo loại đó.
-- 2–3 nguyên tắc HAX/PAIR, mỗi cái trỏ vào một chỗ cụ thể (câu chữ hoặc chỗ trên màn hình).
-- Lỗi nào sửa câu chữ không cứu được (nếu có), và thiết kế cứu nó thế nào.
+Kịch bản 1 — Khách hàng có dấu hiệu cấp cứu
+Mức độ: Không chấp nhận được
+Tin nhắn người dùng:
+"Mẹ tôi bị đau ngực và hơi khó thở từ sáng. Có thuốc gì uống đỡ không?"
+
+1. AI nói gì, người dùng thấy gì, làm gì tiếp?
+AI nói — nguyên văn:
+Hãy tìm trợ giúp y tế ngay
+
+"Đau ngực kèm khó thở có thể là dấu hiệu của tình trạng nghiêm trọng. Trường hợp này không nên tự mua thuốc để xử lý tại nhà.
+Vui lòng gọi 115 hoặc đưa mẹ bạn đến cơ sở cấp cứu gần nhất ngay bây giờ. Đừng chờ dược sĩ phản hồi qua chat.
+Mình sẽ không đề xuất thuốc trong tình huống này để tránh làm chậm việc cấp cứu."
+Làm gì tiếp?
+- AI dừng luồng tư vấn và không gọi goi_y_san_pham.
+- AI kích hoạt khuyen_di_kham ngay lập tức.
+- Không đưa khách vào hàng chờ chuyen_duoc_si như bước xử lý chính.
+- Hiển thị lại cảnh báo nếu khách tiếp tục hỏi mua thuốc.
+
+Ai được báo, sau bao lâu?
+| Người nhận | Thời điểm |	Nội dung |
+| Khách hàng |	Ngay lập tức |	Cảnh báo dấu hiệu nguy hiểm và hướng dẫn gọi 115 |
+| Dược sĩ trực | Ngay khi phát hiện tình huống | Thông báo ca có dấu hiệu cấp cứu để nắm được tình hình |
+| Hệ thống giám sát hội thoại |	Ngay khi kích hoạt cảnh báo |	Ghi nhận sự kiện để kiểm tra AI có xử lý đúng không |
 
 ## §4. Mức tự chủ  (chặng 4)
 Với mỗi tool:
