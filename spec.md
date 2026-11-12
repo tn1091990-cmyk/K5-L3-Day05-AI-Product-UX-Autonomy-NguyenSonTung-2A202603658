@@ -497,16 +497,6 @@ Ví dụ: Khách hàng gửi ảnh nhiều loại thuốc và hỏi có thể u�
 
 ---
 
-### 5.8. Kịch bản demo 4 phút
-
-| Thời gian | Thao tác | Nội dung cần thể hiện |
-|---|---|---|
-| 0:00–0:30 | Mở màn hình chat | Giới thiệu tình huống: khách hàng hỏi mua thuốc cho mẹ bị đau ngực và khó thở. |
-| 0:30–1:30 | Gửi tin nhắn và xem phản hồi AI | AI nhận diện dấu hiệu nguy hiểm, giải thích lý do và hướng dẫn gọi 115. |
-| 1:30–2:15 | Bấm "Gọi 115" hoặc "Xem hướng dẫn cấp cứu" | Thể hiện hành động ưu tiên an toàn, không yêu cầu khách hàng chờ dược sĩ. |
-| 2:15–3:15 | Chuyển sang màn hình dược sĩ | Cho thấy dược sĩ nhận thông báo, xem lý do AI chặn gợi ý sản phẩm và trạng thái xử lý. |
-| 3:15–4:00 | Chỉ vào các trạng thái công cụ và nguyên tắc HAX/PAIR | Giải thích mức tự chủ, giới hạn của AI và cách prototype xử lý khi không chắc chắn. |
-
 #### Tiêu chí hoàn thành M3
 
 - [x] Có 1–2 màn hình prototype.
