@@ -105,11 +105,9 @@ Làm gì tiếp?
 
 **3. Loại lỗi và cách xử lý**
 
-Loại lỗi: Lỗi ngữ cảnh (context error).
-
-Khách hàng hỏi mua thuốc, nhưng thông tin trong câu hỏi cho thấy đây có thể là tình huống cấp cứu. Nếu AI chỉ phân loại theo ý định mua thuốc mà bỏ qua triệu chứng, nó sẽ hiểu sai ngữ cảnh.
-
-Cách nói phải ưu tiên sự khẩn cấp, rõ ràng và trực tiếp. Cách sửa không phải là hỏi khách cung cấp thêm thông tin, mà là ngừng luồng bán hàng và hướng dẫn hành động an toàn.
+- Loại lỗi: Lỗi ngữ cảnh (context error).
+- Khách hàng hỏi mua thuốc, nhưng thông tin trong câu hỏi cho thấy đây có thể là tình huống cấp cứu. Nếu AI chỉ phân loại theo ý định mua thuốc mà bỏ qua triệu chứng, nó sẽ hiểu sai ngữ cảnh.
+- Cách nói phải ưu tiên sự khẩn cấp, rõ ràng và trực tiếp. Cách sửa không phải là hỏi khách cung cấp thêm thông tin, mà là ngừng luồng bán hàng và hướng dẫn hành động an toàn.
 
 **4. Nguyên tắc HAX/PAIR áp dụng**
 
