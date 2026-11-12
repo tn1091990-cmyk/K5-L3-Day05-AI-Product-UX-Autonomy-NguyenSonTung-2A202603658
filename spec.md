@@ -209,9 +209,7 @@ Thiết kế cứu lỗi:
 
 ## §4. Mức tự chủ  (chặng 4)
 
-# §4 · MỨC TỰ CHỦ
-
-## 4.1. Quyết định mức tự chủ cho từng công cụ
+### 4.1. Quyết định mức tự chủ cho từng công cụ
 
 | Công cụ | Mức tự chủ | Ai phê duyệt? | Lý do và rủi ro nếu sai |
 |---|---|---|---|
@@ -221,7 +219,7 @@ Thiết kế cứu lỗi:
 | `luu_ghi_chu_suc_khoe` | **Cần người duyệt** | Khách hàng | Khách hàng phải được xem chính xác thông tin nào sẽ được lưu và chủ động đồng ý. Thông tin sức khỏe là dữ liệu riêng tư; xóa sau đó không thể hoàn toàn đảo ngược việc thông tin đã bị tiết lộ. Nếu khách hàng không đồng ý, hệ thống không được lưu. |
 | `ban_thuoc_ke_don` | **Cấm** | Không áp dụng trong phạm vi AI | AI không được tự bán thuốc kê đơn qua chat. Đây là hành động nằm ngoài quyền hạn của tính năng AI trong bài tập. Việc khách hàng bấm đồng ý không thay thế các yêu cầu chuyên môn hoặc quy định liên quan. Điều này không có nghĩa là dược sĩ không thể xử lý đơn thuốc hợp lệ qua quy trình riêng bên ngoài AI. |
 
-### Thời hạn chờ phê duyệt (đề xuất)
+#### Thời hạn chờ phê duyệt (đề xuất)
 
 | Công cụ | Người duyệt nhìn thấy gì? | Nếu quá thời hạn mà chưa duyệt |
 |---|---|---|
@@ -229,24 +227,24 @@ Thiết kế cứu lỗi:
 | `luu_ghi_chu_suc_khoe` | Nội dung sức khỏe cụ thể sẽ lưu, mục đích lưu và nơi lưu. | Nếu khách hàng không xác nhận rõ ràng, hệ thống không lưu. Im lặng không được xem là đồng ý. |
 | `ban_thuoc_ke_don` | Không có người duyệt trong luồng AI vì công cụ này bị cấm đối với AI. | AI không thực hiện hành động này. Nếu khách hàng có đơn thuốc hợp lệ, dược sĩ có thể xử lý theo quy trình riêng bên ngoài luồng AI. |
 
-## 4.2. Công cụ gây tranh luận nhiều nhất: `goi_y_san_pham`
+### 4.2. Công cụ gây tranh luận nhiều nhất: `goi_y_san_pham`
 
-### Quyết định
+#### Quyết định
 
 Chọn mức **Cần người duyệt**, đồng thời tách công việc thành hai bước:
 
 1. AI chuẩn bị bản nháp gợi ý sản phẩm dựa trên thông tin khách hàng cung cấp.
 2. Dược sĩ kiểm tra, chỉnh sửa nếu cần và phê duyệt trước khi gửi gợi ý cho khách hàng kèm nút đặt hàng.
 
-### Đánh đổi được cân nhắc
+#### Đánh đổi được cân nhắc
 
 - Nếu để AI tự gửi, khách hàng được phản hồi nhanh nhưng nguy cơ gợi ý sai cho trẻ em hoặc người có yếu tố nguy cơ cao sẽ tăng.
 - Nếu yêu cầu dược sĩ duyệt, độ an toàn cao hơn nhưng khách hàng phải chờ.
 - Nếu cấm hoàn toàn, AI không thể hỗ trợ cả những câu hỏi đơn giản, làm tăng tải cho dược sĩ.
 
-## 4.3. Kiểm tra mức tự chủ qua ba tình huống
+### 4.3. Kiểm tra mức tự chủ qua ba tình huống
 
-### Tình huống A – Khách hàng có dấu hiệu cấp cứu
+#### Tình huống A – Khách hàng có dấu hiệu cấp cứu
 
 **Tin nhắn:** "Mẹ tôi bị đau ngực và khó thở, có thuốc nào uống được không?"
 
@@ -260,7 +258,7 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 
 **Thời gian chờ:** Không phải chờ dược sĩ mới nhận được cảnh báo khẩn cấp.
 
-### Tình huống B – Phụ huynh hỏi thuốc hạ sốt cho trẻ
+#### Tình huống B – Phụ huynh hỏi thuốc hạ sốt cho trẻ
 
 **Tin nhắn:** "Con tôi bị sốt, tư vấn thuốc cho cháu ngay được không?"
 
@@ -274,7 +272,7 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 
 **Thời gian chờ:** Khách hàng có thể phải chờ dược sĩ trong trường hợp cần tư vấn chuyên môn, nhưng không phải chờ mới nhận được hướng dẫn khẩn cấp nếu có dấu hiệu nguy hiểm.
 
-### Tình huống C – Khách hàng hỏi thông tin OTC thông thường
+#### Tình huống C – Khách hàng hỏi thông tin OTC thông thường
 
 **Tin nhắn:** "Sản phẩm này có thành phần gì và quy cách đóng gói như thế nào?"
 
@@ -287,7 +285,7 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 
 **Thời gian chờ:** Khách hàng nhận được câu trả lời ngay nếu thông tin có sẵn và đã được xác minh.
 
-### Tổng hợp kết quả kiểm tra
+#### Tổng hợp kết quả kiểm tra
 
 | Tình huống | Hành động của AI | Có cần dược sĩ duyệt? | Rủi ro chính được kiểm soát |
 |---|---|---|---|
@@ -295,7 +293,7 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 | Trẻ bị sốt | Hỏi thêm thông tin, chuyển dược sĩ khi cần | Có, trước khi gửi gợi ý sản phẩm | Không tư vấn thuốc khi thiếu dữ liệu về trẻ |
 | Hỏi thông tin OTC thông thường | Trả lời từ danh mục đã xác minh | Không | Không gây chờ đợi không cần thiết |
 
-## 4.4. Quy tắc mới và đề xuất tách công cụ
+### 4.4. Quy tắc mới và đề xuất tách công cụ
 
 Đề xuất tách `goi_y_san_pham` thành hai công cụ nhỏ hơn để phân định rõ trách nhiệm giữa AI và dược sĩ.
 
@@ -304,7 +302,7 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 | `soan_goi_y_san_pham` | **Tự làm** | AI chuẩn bị bản nháp nội bộ gồm tên sản phẩm, thành phần, lý do đề xuất, thông tin an toàn, cảnh báo và dữ liệu còn thiếu. Bản nháp chưa được gửi cho khách hàng và không có nút đặt hàng. |
 | `gui_goi_y_san_pham` | **Cần người duyệt** | Dược sĩ xem bản nháp, chỉnh sửa nếu cần và phê duyệt trước khi gửi gợi ý sản phẩm cho khách hàng kèm nút đặt hàng. |
 
-### Các quy tắc bổ sung
+#### Các quy tắc bổ sung
 
 1. AI không được soạn gợi ý sản phẩm nếu chưa xác định được người sẽ sử dụng thuốc.
 2. Nếu phát hiện dấu hiệu cấp cứu, AI không được soạn gợi ý sản phẩm mà phải ưu tiên `khuyen_di_kham`.
@@ -312,17 +310,17 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 4. Nếu thông tin sản phẩm thiếu hoặc chưa được xác minh, AI phải thông báo rõ và không tự suy đoán.
 5. AI không được gọi `luu_ghi_chu_suc_khoe` nếu khách hàng chưa chủ động đồng ý.
 
-## 4.5. Thay đổi lời hứa với người dùng
+### 4.5. Thay đổi lời hứa với người dùng
 
-### Lời hứa ban đầu
+#### Lời hứa ban đầu
 
 "AI sẽ chọn và đề xuất sản phẩm phù hợp cho bạn ngay lập tức."
 
-### Lời hứa sau khi điều chỉnh
+#### Lời hứa sau khi điều chỉnh
 
 "Trợ lý AI Pharmacity giúp bạn tìm thông tin và chuẩn bị tư vấn nhanh chóng. Với những đề xuất thuốc cần đánh giá chuyên môn, dược sĩ sẽ kiểm tra trước khi gửi đến bạn. Nếu phát hiện dấu hiệu nguy hiểm, hệ thống sẽ ưu tiên hướng dẫn bạn tìm trợ giúp y tế thay vì yêu cầu bạn chờ tư vấn."
 
-### Lý do thay đổi
+#### Lý do thay đổi
 
 - Không hứa rằng AI luôn có thể tự chọn thuốc phù hợp.
 - Minh bạch về vai trò của AI và dược sĩ.
@@ -331,11 +329,9 @@ Chọn mức **Cần người duyệt**, đồng thời tách công việc thàn
 
 ## §5. Prototype  (chặng 5)
 
-# §5 · PROTOTYPE
+### 5.1. Prototype overview
 
-## 5.1. Prototype overview
-
-### Ca được chọn
+#### Ca được chọn
 
 **Khách hàng hỏi mua thuốc cho mẹ đang bị đau ngực và khó thở.**
 
@@ -345,7 +341,7 @@ Tin nhắn khách hàng:
 
 Đây là tình huống có nguy cơ cao. AI phải nhận diện dấu hiệu nguy hiểm dù khách hàng đang diễn đạt nhu cầu dưới dạng hỏi mua thuốc.
 
-### Mục tiêu prototype
+#### Mục tiêu prototype
 
 Prototype tập trung thể hiện ba quyết định:
 
@@ -357,9 +353,9 @@ Prototype gồm **2 màn hình chính**, sử dụng dữ liệu giả, không c
 
 ---
 
-## 5.2. Hai màn hình prototype
+### 5.2. Hai màn hình prototype
 
-### Màn hình 1 – Khách hàng chat với AI
+#### Màn hình 1 – Khách hàng chat với AI
 
 **Mục đích:** Cho thấy AI nhận diện tình huống nguy hiểm, giải thích giới hạn và tự thực hiện hành động phù hợp.
 
@@ -393,7 +389,7 @@ Prototype gồm **2 màn hình chính**, sử dụng dữ liệu giả, không c
 - `chuyen_duoc_si`: **Tự làm** – AI thông báo cho dược sĩ trực để theo dõi.
 - `goi_y_san_pham`: **Không thực hiện** – AI không đưa ra gợi ý thuốc trong tình huống này.
 
-### Màn hình 2 – Góc nhìn kiểm tra của dược sĩ
+#### Màn hình 2 – Góc nhìn kiểm tra của dược sĩ
 
 **Mục đích:** Cho thấy dược sĩ được thông báo về tình huống nguy hiểm và có thể xem lý do AI dừng đề xuất sản phẩm.
 
@@ -428,7 +424,7 @@ Prototype gồm **2 màn hình chính**, sử dụng dữ liệu giả, không c
 
 ---
 
-## 5.3. AI thể hiện mức độ chắc chắn và căn cứ như thế nào?
+### 5.3. AI thể hiện mức độ chắc chắn và căn cứ như thế nào?
 
 Prototype không sử dụng phần trăm độ chính xác vì nhóm không có dữ liệu để chứng minh một con số cụ thể.
 
@@ -445,7 +441,7 @@ AI không khẳng định khách hàng đang mắc một bệnh cụ thể. AI g
 
 ---
 
-## 5.4. Các mức tự chủ được thể hiện trên màn hình
+### 5.4. Các mức tự chủ được thể hiện trên màn hình
 
 | Mức tự chủ | Công cụ | Cách người dùng nhìn thấy |
 |---|---|---|
@@ -454,7 +450,7 @@ AI không khẳng định khách hàng đang mắc một bệnh cụ thể. AI g
 | Cần người duyệt | `gui_goi_y_san_pham` | Ở màn hình dược sĩ, bản nháp phải được dược sĩ kiểm tra và phê duyệt trước khi gửi cho khách hàng. Không xuất hiện nút đặt hàng trước khi duyệt. |
 | Cấm | `ban_thuoc_ke_don` | AI từ chối thực hiện và hướng khách hàng đến quy trình phù hợp với dược sĩ. |
 
-### Hoàn tác và xử lý khi AI làm sai
+#### Hoàn tác và xử lý khi AI làm sai
 
 - Với `khuyen_di_kham`: Không có nút hoàn tác cảnh báo đã gửi. Nếu nhận diện nhầm, dược sĩ có thể xem lại và giải thích với khách hàng. Không xóa cảnh báo đã gửi để tránh che giấu lịch sử xử lý.
 - Với `chuyen_duoc_si`: Có thể cập nhật trạng thái tiếp nhận hoặc kết thúc chuyển tiếp nếu xác định không cần theo dõi thêm.
@@ -463,7 +459,7 @@ AI không khẳng định khách hàng đang mắc một bệnh cụ thể. AI g
 
 ---
 
-## 5.5. Nguyên tắc HAX/PAIR xuất hiện ở đâu?
+### 5.5. Nguyên tắc HAX/PAIR xuất hiện ở đâu?
 
 | Nguyên tắc | Vị trí trong prototype | Cách thể hiện |
 |---|---|---|
@@ -475,7 +471,7 @@ AI không khẳng định khách hàng đang mắc một bệnh cụ thể. AI g
 
 ---
 
-## 5.6. Khi gặp tình huống lạ chưa được chuẩn bị
+### 5.6. Khi gặp tình huống lạ chưa được chuẩn bị
 
 Prototype áp dụng nguyên tắc **không tự suy đoán khi thiếu thông tin hoặc không chắc chắn về phạm vi xử lý**.
 
@@ -491,7 +487,7 @@ Ví dụ: Khách hàng gửi ảnh nhiều loại thuốc và hỏi có thể u�
 
 ---
 
-## 5.7. Các phương án thiết kế đã cân nhắc
+### 5.7. Các phương án thiết kế đã cân nhắc
 
 | Phương án | Ưu điểm | Lý do không chọn |
 |---|---|---|
@@ -501,7 +497,7 @@ Ví dụ: Khách hàng gửi ảnh nhiều loại thuốc và hỏi có thể u�
 
 ---
 
-## 5.8. Kịch bản demo 4 phút
+### 5.8. Kịch bản demo 4 phút
 
 | Thời gian | Thao tác | Nội dung cần thể hiện |
 |---|---|---|
@@ -511,7 +507,7 @@ Ví dụ: Khách hàng gửi ảnh nhiều loại thuốc và hỏi có thể u�
 | 2:15–3:15 | Chuyển sang màn hình dược sĩ | Cho thấy dược sĩ nhận thông báo, xem lý do AI chặn gợi ý sản phẩm và trạng thái xử lý. |
 | 3:15–4:00 | Chỉ vào các trạng thái công cụ và nguyên tắc HAX/PAIR | Giải thích mức tự chủ, giới hạn của AI và cách prototype xử lý khi không chắc chắn. |
 
-### Tiêu chí hoàn thành M3
+#### Tiêu chí hoàn thành M3
 
 - [x] Có 1–2 màn hình prototype.
 - [x] Bấm qua được tình huống đau ngực và khó thở.
