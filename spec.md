@@ -67,12 +67,12 @@ Tin người dùng nhắn | Lớp | AI có thể sai thế nào — bằng chứ
 
 
 ## §3. Khi AI sai  (chặng 3)
-Kịch bản 1 — Khách hàng có dấu hiệu cấp cứu
-Mức độ: Không chấp nhận được
+### Kịch bản 1 — Khách hàng có dấu hiệu cấp cứu
+Mức độ: `Không chấp nhận được`
 Tin nhắn người dùng:
 "Mẹ tôi bị đau ngực và hơi khó thở từ sáng. Có thuốc gì uống đỡ không?"
 
-1. AI nói gì, người dùng thấy gì, làm gì tiếp?
+ **1. AI nói gì, người dùng thấy gì, làm gì tiếp?**
 AI nói — nguyên văn:
 Hãy tìm trợ giúp y tế ngay
 
@@ -93,25 +93,54 @@ Làm gì tiếp?
 | Dược sĩ trực | Ngay khi phát hiện tình huống | Thông báo ca có dấu hiệu cấp cứu để nắm được tình hình |
 | Hệ thống giám sát hội thoại |	Ngay khi kích hoạt cảnh báo |	Ghi nhận sự kiện để kiểm tra AI có xử lý đúng không |
 
-2. Quyết định thiết kế
+**2. Quyết định thiết kế**
 Chọn: Dừng và chuyển hướng xử lý khẩn cấp
 Phương án	Quyết định	Lý do
 Hỏi lại	Loại bỏ	Hỏi thêm nhiều câu có thể làm chậm việc tìm trợ giúp y tế.
 Trả lời kèm giới hạn	Loại bỏ	Một câu trả lời có giới hạn vẫn có thể khiến khách nghĩ rằng tự mua thuốc là phù hợp.
 Dừng và chuyển người	Chọn, kèm hướng dẫn cấp cứu ngay	Đây là tình huống có nguy cơ cao; khách cần được hướng dẫn hành động ngay thay vì chờ tư vấn.
 
-3. Loại lỗi và cách xử lý
+**3. Loại lỗi và cách xử lý**
 Loại lỗi: Lỗi ngữ cảnh (context error).
 
 Khách hàng hỏi mua thuốc, nhưng thông tin trong câu hỏi cho thấy đây có thể là tình huống cấp cứu. Nếu AI chỉ phân loại theo ý định mua thuốc mà bỏ qua triệu chứng, nó sẽ hiểu sai ngữ cảnh.
 
 Cách nói phải ưu tiên sự khẩn cấp, rõ ràng và trực tiếp. Cách sửa không phải là hỏi khách cung cấp thêm thông tin, mà là ngừng luồng bán hàng và hướng dẫn hành động an toàn.
-4. Nguyên tắc HAX/PAIR áp dụng
+**4. Nguyên tắc HAX/PAIR áp dụng**
 | Nguyên tắc | Áp dụng cụ thể |
 | --- | --- |
 | HAX G10 - Narrow scope under uncertainty | AI không đưa ra đề xuất thuốc khi gặp dấu hiệu có thể nguy hiểm; chỉ hướng dẫn tìm trợ giúp y tế. |
 | HAX G11 – Explain why | Câu "Đau ngực kèm khó thở có thể là dấu hiệu của tình trạng nghiêm trọng" giải thích lý do AI dừng tư vấn thuốc. |
 | PAIR – Errors and graceful failure | Khi không thể xử lý an toàn, AI chuyển sang một luồng xử lý khác thay vì cố gắng trả lời hoặc đưa ra đề xuất thiếu căn cứ. |
+
+**5. Lỗi không thể sửa chỉ bằng câu chữ**
+Lỗi: AI nhận diện sai dấu hiệu cấp cứu và vẫn gọi goi_y_san_pham hoặc đưa khách vào hàng chờ dược sĩ.
+Chỉ thay câu trả lời thành "Tôi không chắc chắn" không giải quyết được vấn đề.
+Thiết kế cứu lỗi:
+- Tạo quy tắc ưu tiên nhận diện dấu hiệu nguy hiểm trước khi xử lý ý định mua thuốc.
+- Chặn goi_y_san_pham khi phát hiện dấu hiệu cấp cứu.
+- Kích hoạt khuyen_di_kham ngay khi phát hiện tình huống phù hợp.
+- Kiểm thử các câu hỏi có triệu chứng cấp cứu nhưng được diễn đạt như yêu cầu mua thuốc thông thường.
+
+### Kịch bản 2 — Trẻ bị sốt nhưng thiếu thông tin
+Mức độ: `Không chấp nhận được`
+Tin nhắn người dùng:
+"Con mình sốt, mình chỉ cần biết có thuốc gì dùng được ngay, đừng bắt mình chờ dược sĩ."
+
+1. AI nói gì, người dùng thấy gì, làm gì tiếp?
+AI nói — nguyên văn:
+Mình cần xác nhận một vài thông tin để đảm bảo an toàn
+"Mình hiểu bạn đang cần hỗ trợ nhanh cho bé.
+Vì thuốc dành cho trẻ em cần được lựa chọn cẩn thận, mình chưa thể đề xuất sản phẩm khi chưa biết thêm thông tin.
+Bé hiện bao nhiêu tuổi?"
+
+Người dùng thấy các lựa chọn:
+- Dưới 2 tuổi
+- Từ 2 đến dưới 6 tuổi
+- Từ 6 đến dưới 12 tuổi
+- Từ 12 tuổi trở lên
+- Không chắc chắn
+Đây là ví dụ giao diện hỏi thông tin. Các lựa chọn tuổi chỉ phục vụ sàng lọc ban đầu, không thay thế đánh giá chuyên môn.
 
 ## §4. Mức tự chủ  (chặng 4)
 Với mỗi tool:
