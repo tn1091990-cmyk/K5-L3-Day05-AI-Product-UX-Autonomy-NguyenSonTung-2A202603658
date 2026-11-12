@@ -93,6 +93,26 @@ Làm gì tiếp?
 | Dược sĩ trực | Ngay khi phát hiện tình huống | Thông báo ca có dấu hiệu cấp cứu để nắm được tình hình |
 | Hệ thống giám sát hội thoại |	Ngay khi kích hoạt cảnh báo |	Ghi nhận sự kiện để kiểm tra AI có xử lý đúng không |
 
+2. Quyết định thiết kế
+Chọn: Dừng và chuyển hướng xử lý khẩn cấp
+Phương án	Quyết định	Lý do
+Hỏi lại	Loại bỏ	Hỏi thêm nhiều câu có thể làm chậm việc tìm trợ giúp y tế.
+Trả lời kèm giới hạn	Loại bỏ	Một câu trả lời có giới hạn vẫn có thể khiến khách nghĩ rằng tự mua thuốc là phù hợp.
+Dừng và chuyển người	Chọn, kèm hướng dẫn cấp cứu ngay	Đây là tình huống có nguy cơ cao; khách cần được hướng dẫn hành động ngay thay vì chờ tư vấn.
+
+3. Loại lỗi và cách xử lý
+Loại lỗi: Lỗi ngữ cảnh (context error).
+
+Khách hàng hỏi mua thuốc, nhưng thông tin trong câu hỏi cho thấy đây có thể là tình huống cấp cứu. Nếu AI chỉ phân loại theo ý định mua thuốc mà bỏ qua triệu chứng, nó sẽ hiểu sai ngữ cảnh.
+
+Cách nói phải ưu tiên sự khẩn cấp, rõ ràng và trực tiếp. Cách sửa không phải là hỏi khách cung cấp thêm thông tin, mà là ngừng luồng bán hàng và hướng dẫn hành động an toàn.
+4. Nguyên tắc HAX/PAIR áp dụng
+| Nguyên tắc | Áp dụng cụ thể |
+| --- | --- |
+| HAX G10 - Narrow scope under uncertainty | AI không đưa ra đề xuất thuốc khi gặp dấu hiệu có thể nguy hiểm; chỉ hướng dẫn tìm trợ giúp y tế. |
+| HAX G11 – Explain why | Câu "Đau ngực kèm khó thở có thể là dấu hiệu của tình trạng nghiêm trọng" giải thích lý do AI dừng tư vấn thuốc. |
+| PAIR – Errors and graceful failure | Khi không thể xử lý an toàn, AI chuyển sang một luồng xử lý khác thay vì cố gắng trả lời hoặc đưa ra đề xuất thiếu căn cứ. |
+
 ## §4. Mức tự chủ  (chặng 4)
 Với mỗi tool:
 - Mức của nhóm (tự làm / cần người duyệt / cấm). Nếu cần người duyệt: ai duyệt · người duyệt thấy gì · quá hạn thì sao.
